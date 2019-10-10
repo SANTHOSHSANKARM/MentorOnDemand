@@ -47,8 +47,12 @@ get g(){
     // this.user = new User();
     this.user.userName = this.userLogInForm.get('email').value;
     this.user.password = this.userLogInForm.get('password').value;
-    this.userService.createUser(this.user).subscribe(data => console.log(data), error => console.log(error));
-    this.router.navigate(['signin']);
+    this.userService.createUser(this.user).subscribe(data => 
+        {
+          console.log(data);
+          this.router.navigate(['login']);
+        }, error => console.log(error));
+
     if(this.userLogInForm.invalid){
        return;
      }
@@ -58,7 +62,11 @@ get g(){
      this.mentor.password=this.mentorLogInForm.get('mpassword').value;
      this.mentor.knownCourse=this.mentorLogInForm.get('knowntechnology').value;
      this.mentor.experience=this.mentorLogInForm.get('experience').value;
-     this.userService.createMentor(this.mentor).subscribe(data=>console.log(data),error=>console.log(error));
+     this.userService.createMentor(this.mentor).subscribe(data=>
+        {
+          console.log(data);
+          this.router.navigate(['login']);
+        }, error => console.log(error));
      this.router.navigate(['signin']);
      if(this.mentorLogInForm.invalid){
        return;
