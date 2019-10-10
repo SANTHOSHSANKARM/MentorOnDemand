@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand">
+      <h1 style="color:white">Mentor on Demands</h1>
+    </a>
+    <a class="navbar-brand ml-auto" href="#">
+      <h5 style="color:white">Home</h5>
+    </a>
+  
+  </nav>
+  
+  <!-- <div style="height:680px; background-color: cadetblue"> -->
+  
+  <body style="background: linear-gradient(to bottom, #33ccff 0%, #0835af 100%); margin-left:0 ;height:680px;">
+    <div class="container">
+  
+      <div class="col-md-6">
+        <div id="logbox" style="background-color:#688fb6; color:cornsilk">
+          <form [formGroup]="techForm" (ngSubmit)="onTechSubmit()">
+            <h1 style="color: whitesmoke">Technology-Add</h1>
+  
+  
+            <div class="form-group">
+              <input type="text" formControlName="techName" class="form-control input pass"
+                [ngClass]="{ 'is-invalid': submitted && g.useremail.errors }" placeholder="Enter Technology"/>
+              <div *ngIf="submitted && g.useremail.errors" class="invalid-feedback">
+                <div *ngIf="g.useremail.errors.required">Email is required</div>
+                <div *ngIf="g.useremail.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+              <input type="password" formControlName="techPrerequisite" class="form-control input pass"
+                [ngClass]="{ 'is-invalid': submitted && g.userpassword.errors }" placeholder="Enter prerequisite"/>
+              <div *ngIf="submitted && g.userpassword.errors" class="invalid-feedback">
+                <div *ngIf="g.userpassword.errors.required">Password is required</div>
+                <div *ngIf="g.userpassword.errors.minlength">Password must be at least 6 characters</div>
+              </div>
+            </div>
+  
+            <div class="form-group text-center">
+              <button class="btn btn-secondary" type="submit">ADD</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>

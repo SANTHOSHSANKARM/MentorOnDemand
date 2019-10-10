@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand">
+        <h1 style="color:white">Mentor on Demands</h1>
+    </a>
+</nav>
+
+  <body background="assets/img/background.jpg" style="height: 100vh;">
+    <!-- <div style="height:100%; background-color: cadetblue"> -->
+        <div class="container" style="margin-left:11cm; ">
+
+            <div class="col-md-6">
+                <div id="logbox" style="background-color:rgb(104, 143, 182); color:cornsilk">
+                    <form [formGroup]="adminForm" (ngSubmit)="onAdminSubmit()">
+                        <h1 style="color:whitesmoke">Admin login</h1>
+
+                        <div class="form-group">
+                            <input type="email" formControlName="email" class="form-control input pass" name="email"
+                              [ngClass]="{'is-valid':submitted && f.email.errors}" placeholder="Email address" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                              <div *ngIf="f.email.errors.required">E-mail is required</div>
+                              <div *ngIf="f.email.errors.email">Enter valid email</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" formControlName="password" class="form-control input pass" name="password"
+                              [ngClass]="{'is-valid':submitted && f.password.errors}" placeholder="Choose a password" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                              <div *ngIf="f.password.errors.required">Password is required</div>
+                              <div *ngIf="f.password.errors.minlength">Password must have 6 characters</div>
+                            </div>
+                        </div>
+
+
+                
+                        <div class="form-group text-center">
+                            <button [routerLink]="['/admintechnology']" type="submit" class="btn btn-secondary">Signup</button>
+                          </div><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+</body>

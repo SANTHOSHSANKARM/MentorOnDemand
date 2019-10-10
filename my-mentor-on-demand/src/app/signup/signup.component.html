@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand">
+      <h1 style="color:white">Mentor on Demands</h1>
+    </a>
+    <a class="navbar-brand ml-auto" href="#">
+      <h5 style="color:white">Home</h5>
+    </a>
+  
+  </nav>
+  
+  <body background="assets/img/background.jpg" style="height: 100vh;">
+    <div class="container">
+      <div class="col-md-6">
+        <div id="logbox" style="background-color:rgb(104, 143, 182); color:cornsilk">
+  
+          <h1 style="color:whitesmoke">Student-Registration</h1>
+          <form [formGroup]="userLogInForm" (ngSubmit)="onSignUp()">
+  
+            <div class="form-group">
+              <input type="email" formControlName="email" class="form-control input pass" name="email"
+                [ngClass]="{'is-valid':submitted && f.email.errors}" placeholder="Email address" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">E-mail is required</div>
+                <div *ngIf="f.email.errors.email">enter valid email</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <input type="password" formControlName="password" class="form-control input pass" name="password"
+                [ngClass]="{'is-valid':submitted && f.password.errors}" placeholder="Choose a password" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must have 6 characters</div>
+              </div>
+            </div>
+  
+            <input name="user[password2]" [(ngModel)]="cpass" [ngModelOptions]="{standalone: true}" type="password"
+              placeholder="Confirm password" required="required" class="input pass" />
+  
+            <div class="form-group text-center">
+              <button [routerLink]="['/login']" type="submit" class="btn btn-secondary">Signup</button>
+            </div><br>
+            <div class="text-center">
+              already have an account? <a [routerLink]="['/login']" id="login_id">login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--col-md-6-->
+  
+      <div class="col-md-6">
+        <div id="logbox" style="background-color:rgb(104, 143, 182); color:cornsilk">
+  
+          <form [formGroup]="mentorLogInForm" (ngSubmit)="onMentorSignUp()">
+  
+            <h1 style="color:whitesmoke">Mentor-Registration</h1>
+  
+            <div class="form-group">
+              <input type="email" formControlName="memail" class="form-control input pass" name="memail"
+                [ngClass]="{'is-valid':submitted && g.memail.errors}" placeholder="Email address" />
+              <div *ngIf="submitted && g.memail.errors" class="invalid-feedback">
+                <div *ngIf="g.memail.errors.required">E-mail is required</div>
+                <div *ngIf="g.memail.errors.email">enter valid email</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <input type="password" formControlName="mpassword" class="form-control input pass" name="mpassword"
+                [ngClass]="{'is-valid':submitted && g.mpassword.errors}" placeholder="Choose a password" />
+              <div *ngIf="submitted && g.mpassword.errors" class="invalid-feedback">
+                <div *ngIf="g.mpassword.errors.required">Password is required</div>
+                <div *ngIf="g.mpassword.errors.minlength">Password must have 6 characters</div>
+              </div>
+            </div>
+  
+  
+            <input name="user[password2]" [(ngModel)]="mcmail" [ngModelOptions]="{standalone: true}" type="password" placeholder="Confirm password"
+              required="required" class="input pass" />
+  
+            <div class="form-group">
+              <input type="text" formControlName="knowntechnology" class="form-control input pass" name="knowntechnology"
+                [ngClass]="{'is-valid':submitted && g.knowntechnology.errors}" placeholder="Known Technology" />
+              <div *ngIf="submitted && g.knowntechnology.errors" class="invalid-feedback">
+                <div *ngIf="g.knowntechnology.errors.required">Enter Technology</div>
+                <!-- <div *ngIf="g.knowntechnology.errors.minlength">Password must have 6 characters</div> -->
+              </div>
+            </div>
+  
+            <input name="worktime" [(ngModel)]="mtime" [ngModelOptions]="{standalone: true}" type="text" placeholder="Working Time" class="input pass" />
+  
+            <div class="form-group">
+              <input type="text" formControlName="experience" class="form-control input pass" name="experience"
+                [ngClass]="{'is-valid':submitted && g.experience.errors}" placeholder="Enter Year of experience" />
+              <div *ngIf="submitted && g.experience.errors" class="invalid-feedback">
+                <div *ngIf="g.experience.errors.required">Enter Experience</div>
+                <!-- <div *ngIf="g.knowntechnology.errors.minlength">Password must have 6 characters</div> -->
+              </div>
+            </div>
+  
+            <div class="text-center">
+              <button [routerLink]="['/login']" type="submit" class="btn btn-secondary">Signup</button>
+            </div><br>
+            <div class="text-center">
+              <a [routerLink]="['/login']" id="">Already Member </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br>
+  
+  </body>

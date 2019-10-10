@@ -1,0 +1,36 @@
+<body style="margin-left:0 ;height:770px;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand">
+            <h1 style="color:white">Mentor on Demands</h1>
+        </a>
+        <a [routerLink]="['/studentindex']" class="navbar-brand ml-auto">
+            <h5 style="color:white">Notification</h5>
+        </a>
+        <a [routerLink]="['/signin']" class="navbar-brand">
+            <h5 style="color:white">Logout</h5>
+        </a>
+
+    </nav>
+
+    <br>
+            <div class="container justify-content-center">
+                <br><br><br><br>
+            <div class="card" style="width:350px;text-align: center;">
+                <div class="card-body bg-dark text-white">
+                    <h4 class="card-title">Current Training</h4>
+                    <span>
+                        <a [routerLink]="['/studentcurrent']" class="btn btn-primary">view</a>
+                    </span>
+                </div>
+            </div><br><br><br><br>
+            <div class="card" style="width:350px">
+                <div class="card-body bg-warning text-white" style="padding-left:2cm;">
+                    <h4 class="card-title">Completed Training</h4>
+                    <span style="padding-left: 2cm">
+                        <a [routerLink]="['/studentcomplete']" class="btn btn-primary">view</a>
+                    </span>
+                </div>
+            </div>
+    </div>
+</body>

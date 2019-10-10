@@ -1,0 +1,52 @@
+<body style="background: #75992c; margin-left:0 ;height:770px;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand">
+            <h1 style="color:white">Mentor on Demands</h1>
+        </a>
+        <a [routerLink]="['/admintechnology']" class="navbar-brand ml-auto">
+            <h5 style="color:white">Technology</h5>
+        </a>
+        <a [routerLink]="['/mentorlist']" class="navbar-brand">
+            <h5 style="color:white">&nbsp;&nbsp;&nbsp;Manage Accounts</h5>
+        </a>
+        <a [routerLink]="['/adminsignin']" class="navbar-brand">
+            <h5 style="color:white">&nbsp;&nbsp;&nbsp;Logout</h5>
+        </a>
+    </nav>
+    <div style="margin-top:2cm">
+        <!-- <div style="height:680px; background-color: cadetblue"> -->
+            <div style="margin-left:11cm;">
+                <table border="1" style="font-size:24px; background-color:rgb(104, 143, 182); color:black">
+                    <tr height="70">
+                        <th style="padding-left:25px" width="200">Technology</th>
+                        <th width="200">Fee</th>
+                        <th width="200">Action</th>
+                    </tr>
+                    <tr height="70">
+                        <td style="padding-left:25px">.NET</td>
+                        <td>Rs.11,000</td>
+                        <td><button type="button">Edit</button>&nbsp;<button type="button">Remove</button></td>
+                    </tr>
+                    <tr height="70">
+                        <td style="padding-left:25px">Java</td>
+                        <td>Rs.12,000</td>
+                        <td><button type="button">Edit</button>&nbsp;<button type="button">Remove</button></td>
+                    </tr>
+                    <tr height="70">
+                        <td style="padding-left:25px">RPI</td>
+                        <td>Rs.14,000</td>
+                        <td><button type="button">Edit</button>&nbsp;<button type="button">Remove</button></td>
+                    </tr>
+                    <tr height="70">
+                        <td style="padding-left:25px">Oracle</td>
+                        <td>Rs.9,000</td>
+                        <td><button type="button">Edit</button>&nbsp;<button type="button">Remove</button></td>
+                    </tr>
+                    <tr height="70">
+                        <td colspan="3" style="padding-left:3cm"><button [routerLink]="['/addtechnology']" type="button">Add Technology</button></td>
+                    </tr>
+                </table>
+            </div>
+        
+    </div>
+</body>
